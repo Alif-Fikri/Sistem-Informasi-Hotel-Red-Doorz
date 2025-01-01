@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.mercubuana.sisfohotelreddoorz.Kamar" table="Kamar" lazy="false">
+        <id name="id_kamar" column="id_kamar" type="integer" unsaved-value="0">
+            <generator class="native" />
+        </id>
+        <property name="nomor_kamar" column="nomor_kamar" type="string" not-null="true" />
+        <property name="sisa_kamar" column="sisa_kamar" type="integer" not-null="true" />
+        <property name="kapasitas" column="kapasitas" type="integer" not-null="true" />
+        <property name="tipe_kamar" column="tipe_kamar" type="character" length="1" not-null="true" />
+        <set name="ORM_Pemesan" lazy="true" cascade="save-update,lock" inverse="true">
+            <key column="Kamarid_kamar" not-null="true" />
+            <one-to-many class="com.mercubuana.sisfohotelreddoorz.Pemesan" />
+        </set>
+        <set name="ORM_TipeKamar" lazy="true" cascade="save-update,lock" inverse="true">
+            <key column="Kamarid_kamar" not-null="true" />
+            <one-to-many class="com.mercubuana.sisfohotelreddoorz.TipeKamar" />
+        </set>
+    </class>
+</hibernate-mapping>

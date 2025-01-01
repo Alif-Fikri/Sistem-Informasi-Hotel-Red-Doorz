@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: 
+License Type: Evaluation
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.mercubuana.sisfohotelreddoorz.Pemesan" table="Pemesan" lazy="false">
+		<id name="id_pemesan" column="id_pemesan" type="integer" unsaved-value="0">
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="nama_pemesan" column="nama_pemesan" type="string" length="255" not-null="true" lazy="false"/>
+		<property name="nomor_kamar" column="nomor_kamar" type="string" length="255" not-null="true" lazy="false"/>
+		<property name="tanggal_pemesanan" column="tanggal_pemesanan" type="date" not-null="true" lazy="false"/>
+		<property name="tipe_kamar" column="tipe_kamar" type="character" length="255" not-null="true" lazy="false"/>
+		<many-to-one name="kamarid_kamar" cascade="lock" column="Kamarid_kamar" class="com.mercubuana.sisfohotelreddoorz.Kamar" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+		<set name="ORM_TipeKamar" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="Pemesanid_pemesan" not-null="true"/>
+			<one-to-many class="com.mercubuana.sisfohotelreddoorz.TipeKamar"/>
+		</set>
+	</class>
+</hibernate-mapping>

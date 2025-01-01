@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Model quotesql="1" tablecharset="" mysql_version="504" mssql_version="2005" derby_version="106" ingres_version="9">
+  <Entity name="Kamar" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="id_kamar">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="nomor_kamar">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>15</Type>
+      <Length>19</Length>
+      <Scale>0</Scale>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>true</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="sisa_kamar">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>15</Type>
+      <Length>19</Length>
+      <Scale>0</Scale>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="kapasitas">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>15</Type>
+      <Length>19</Length>
+      <Scale>0</Scale>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Pemesan" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="id_pemesan">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="nama_pemesan">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="tanggal_pemesanan">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>17</Type>
+      <Length>0</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="tipe_kamar">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>255</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Kamarid_kamar">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>Kamar.id_kamar</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="tipe_kamar" Unlogged="false" PKClustered="0" Temporal="false" TemporalStartTimeColumn="null" TemporalEndTimeColumn="null" TemporalHistoryTable="null">
+    <Column name="id_kelas">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="nama_kelas">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>31</Type>
+      <Length>255</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="harga_per_malam">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>15</Type>
+      <Length>19</Length>
+      <Scale>0</Scale>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Kamarid_kamar">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>Kamar.id_kamar</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="Pemesanid_pemesan">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>Pemesan.id_pemesan</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <ForeignKey name="FKPemesan86892">
+    <ReferenceTable>Pemesan</ReferenceTable>
+    <ReferencedTable>Kamar</ReferencedTable>
+    <Columns>
+      <Column>Kamarid_kamar</Column>
+    </Columns>
+    <RefColumns>
+      <Column>id_kamar</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKtipe_kamar216940">
+    <ReferenceTable>tipe_kamar</ReferenceTable>
+    <ReferencedTable>Kamar</ReferencedTable>
+    <Columns>
+      <Column>Kamarid_kamar</Column>
+    </Columns>
+    <RefColumns>
+      <Column>id_kamar</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKtipe_kamar619298">
+    <ReferenceTable>tipe_kamar</ReferenceTable>
+    <ReferencedTable>Pemesan</ReferencedTable>
+    <Columns>
+      <Column>Pemesanid_pemesan</Column>
+    </Columns>
+    <RefColumns>
+      <Column>id_pemesan</Column>
+    </RefColumns>
+  </ForeignKey>
+</Model>

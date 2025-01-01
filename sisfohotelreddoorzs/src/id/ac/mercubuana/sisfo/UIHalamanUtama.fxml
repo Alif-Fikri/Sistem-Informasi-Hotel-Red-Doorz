@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="id.ac.mercubuana.sisfo.TambahDataKamarController">
+  <tabs>
+    <Tab fx:id="tabDataKamar" text="Data Kamar">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="470.0" prefWidth="600.0">
+               <children>
+                  <Label layoutX="21.0" layoutY="37.0" text="Nomor Kamar            :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="76.0" text="Tipe Kamar               :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="121.0" text="Kapasitas                  :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="164.0" text="Sisa Tempat             :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="NomorKamar" layoutX="162.0" layoutY="34.0" />
+                  <Spinner fx:id="Kapasitas" layoutX="163.0" layoutY="118.0" />
+                  <Spinner fx:id="SisaTempat" layoutX="164.0" layoutY="161.0" />
+                  <Button fx:id="SimpanDataKamar" layoutX="384.0" layoutY="161.0" mnemonicParsing="false" onMouseClicked="#handleSimpanDataKamar" text="Simpan" />
+                  <TableView fx:id="TableDataKamar" layoutX="27.0" layoutY="229.0" prefHeight="200.0" prefWidth="419.0">
+                    <columns>
+                      <TableColumn fx:id="KolomNomorKamar" prefWidth="95.20001220703125" text="Nomor Kamar" />
+                      <TableColumn fx:id="KolomTipeKamar" prefWidth="124.79998779296875" text="Tipe Kamar" />
+                        <TableColumn fx:id="KolomKapasitas" prefWidth="95.20001220703125" text="Kapasitas" />
+                        <TableColumn fx:id="KolomSisaTempat" prefWidth="95.20001220703125" text="Sisa Tempat" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="TambahDataKamar" layoutX="461.0" layoutY="229.0" mnemonicParsing="false" onMouseClicked="#handleTambahDataKamar" text="Tambah" />
+                  <Button fx:id="UbahDataKamar" layoutX="461.0" layoutY="261.0" mnemonicParsing="false" onMouseClicked="#handleUbahDataKamar" text="Ubah" />
+                  <Button fx:id="HapusDataKamar" layoutX="461.0" layoutY="294.0" mnemonicParsing="false" onMouseClicked="#handleHapusDataKamar" text="Hapus" />
+                  <ChoiceBox fx:id="TipeKamar" layoutX="163.0" layoutY="74.0" prefWidth="150.0" />
+                  <Label layoutX="21.0" layoutY="202.0" text="Daftar Kamar">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="tabDataPemesan" text="Data Pemesan">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="32.0" layoutY="31.0" text="Tipe kamar                  :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="31.0" layoutY="118.0" text="Nama Pemesan           :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="30.0" layoutY="74.0" text="No Kamar yang dipilih :">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="32.0" layoutY="160.0" text="Tanggal Pemesanan     : ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="TipeKamarPemesan" layoutX="191.0" layoutY="28.0" prefWidth="150.0" />
+                  <TextField fx:id="NomorPilih" layoutX="192.0" layoutY="71.0" />
+                  <TextField fx:id="NamaPemesan" layoutX="192.0" layoutY="115.0" />
+                  <DatePicker fx:id="TanggalPemesanan" layoutX="192.0" layoutY="157.0" />
+                  <Button fx:id="CariDataKamar" layoutX="367.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#handleCariDataKamar" text="Cari Kamar" />
+                  <Button fx:id="SimpanPemesanan" layoutX="192.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#handleSimpanPemesanan" text="Simpan Pemesanan" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
